@@ -18,6 +18,7 @@ onStopBtn.addEventListener('click', stopChangeColor);
 function startChangeColor() {
   timerId = setInterval(getBgColor, PROMPT_DELAY);
   onStartBtn.toggleAttribute('disabled');
+  onStopBtn.removeAttribute('disabled');
 }
 
 // функція зупинки зміни кольорів
@@ -25,6 +26,7 @@ function startChangeColor() {
 function stopChangeColor() {
   timerId = clearInterval(timerId);
   onStartBtn.removeAttribute('disabled');
+  onStopBtn.toggleAttribute('disabled');
 }
 
 // функція рандомної зміни кольорів
